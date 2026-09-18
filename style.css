@@ -8,53 +8,161 @@ html,
 body {
   width: 100%;
   min-height: 100%;
-  font-family: Georgia, "Times New Roman", serif;
 }
 
 body {
   overflow-x: hidden;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
-/* =========================
-   COMMON
-========================= */
-
-.content-page {
-  min-height: 100vh;
-  padding: 60px 7% 50px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-h1 {
-  font-size: clamp(38px, 8vw, 72px);
-  margin-bottom: 35px;
-  letter-spacing: 2px;
-}
+/* BUTTON */
 
 .next-btn {
   display: inline-block;
-  margin-top: 35px;
-  padding: 15px 26px;
+  padding: 14px 25px;
+  border: 1px solid rgba(255,255,255,0.7);
   border-radius: 30px;
+  color: white;
+  background: rgba(0,0,0,0.35);
   text-decoration: none;
   font-family: Arial, sans-serif;
   font-size: 14px;
   letter-spacing: 1px;
-  transition: 0.3s ease;
+  backdrop-filter: blur(5px);
 }
 
-.next-btn:hover {
-  transform: translateY(-3px);
-}
-
-/* =========================
-   PAGE 1
-========================= */
+/* PAGE 1 */
 
 .page-one {
   min-height: 100vh;
   background-image: url("friend-page1.jpg");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.small-title {
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px black;
+}
+
+.hero h1 {
+  color: white;
+  font-size: clamp(55px, 13vw, 110px);
+  line-height: 0.9;
+  letter-spacing: 5px;
+  text-shadow: 0 3px 18px black;
+}
+
+.subtitle {
+  color: white;
+  margin: 25px 0;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 2px 10px black;
+}
+
+.page-one .next-btn {
+  background: rgba(255,255,255,0.9);
+  color: #111;
+}
+
+/* PAGE 2 */
+
+.friend-page {
+  min-height: 100vh;
+  background: #111;
+}
+
+.friend-screen {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.friend-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.friend-overlay {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding: 55px 7% 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.08),
+    rgba(0,0,0,0.22)
+  );
+}
+
+.friend-overlay h1 {
+  font-size: clamp(42px, 9vw, 75px);
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: 2px;
+  text-shadow: 0 3px 15px black;
+  margin-bottom: 30px;
+}
+
+.friend-writing {
+  width: min(800px, 90vw);
+  max-height: 45vh;
+  overflow-y: auto;
+  padding: 10px;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: center;
+  text-shadow: 0 2px 8px black;
+}
+
+.friend-writing p {
+  margin-bottom: 20px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .friend-overlay {
+    padding: 40px 6%;
+  }
+
+  .friend-writing {
+    max-height: 48vh;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .next-btn {
+    padding: 13px 21px;
+  }
+}
