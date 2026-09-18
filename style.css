@@ -15,10 +15,13 @@ body {
   font-family: Georgia, "Times New Roman", serif;
 }
 
-/* BUTTON */
+/* =========================
+   COMMON BUTTON
+========================= */
 
 .next-btn {
   display: inline-block;
+  margin-top: 30px;
   padding: 14px 25px;
   border: 1px solid rgba(255,255,255,0.7);
   border-radius: 30px;
@@ -29,9 +32,16 @@ body {
   font-size: 14px;
   letter-spacing: 1px;
   backdrop-filter: blur(5px);
+  transition: 0.3s ease;
 }
 
-/* PAGE 1 */
+.next-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================
+   PAGE 1
+========================= */
 
 .page-one {
   min-height: 100vh;
@@ -83,7 +93,9 @@ body {
   color: #111;
 }
 
-/* PAGE 2 */
+/* =========================
+   PAGE 2
+========================= */
 
 .friend-page {
   min-height: 100vh;
@@ -148,15 +160,141 @@ body {
   margin-bottom: 20px;
 }
 
-/* MOBILE */
+/* =========================
+   PAGE 3 - AMMA
+========================= */
+
+.amma-page {
+  min-height: 100vh;
+  background: #17130f;
+}
+
+.amma-screen {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.amma-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.amma-overlay {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding: 55px 7% 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.08),
+    rgba(0,0,0,0.28)
+  );
+}
+
+.amma-overlay h1 {
+  font-size: clamp(45px, 10vw, 80px);
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: 3px;
+  text-shadow: 0 3px 16px black;
+  margin-bottom: 30px;
+}
+
+.amma-writing {
+  width: min(800px, 90vw);
+  max-height: 48vh;
+  overflow-y: auto;
+  padding: 10px;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: center;
+  text-shadow: 0 2px 9px black;
+}
+
+.amma-writing p {
+  margin-bottom: 20px;
+}
+
+/* =========================
+   PAGE 4
+========================= */
+
+.final-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at center,
+      #f1e8dc 0%,
+      #d9cbb9 100%
+    );
+  color: #211d19;
+}
+
+.content-page {
+  min-height: 100vh;
+  padding: 60px 7% 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.final-page h1 {
+  font-size: clamp(42px, 9vw, 75px);
+  margin-bottom: 35px;
+  font-style: italic;
+}
+
+.final-message {
+  width: min(800px, 92vw);
+  min-height: 400px;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 2;
+  text-align: center;
+}
+
+.final-message p {
+  margin-bottom: 20px;
+}
+
+.final-message p:last-child {
+  margin-top: 45px;
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.final-page .next-btn {
+  background: #211d19;
+  color: white;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
-  .friend-overlay {
+  .friend-overlay,
+  .amma-overlay {
     padding: 40px 6%;
   }
 
-  .friend-writing {
+  .friend-writing,
+  .amma-writing {
     max-height: 48vh;
     font-size: 16px;
     line-height: 1.7;
@@ -165,4 +303,9 @@ body {
   .next-btn {
     padding: 13px 21px;
   }
-}
+
+  .final-message {
+    font-size: 17px;
+  }
+    }
+
