@@ -15,38 +15,26 @@ body {
   font-family: Georgia, "Times New Roman", serif;
 }
 
-/* =========================
-   COMMON BUTTON
-========================= */
+/* COMMON BUTTON */
 
 .next-btn {
   display: inline-block;
   margin-top: 30px;
   padding: 14px 26px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255,255,255,0.8);
   border-radius: 30px;
   text-decoration: none;
   font-family: "Trebuchet MS", Arial, sans-serif;
   font-size: 14px;
   letter-spacing: 1px;
   transition: 0.3s ease;
-  backdrop-filter: blur(5px);
 }
 
-.next-btn:hover {
-  transform: translateY(-3px);
-}
-
-/* =========================
-   PAGE 1
-========================= */
+/* PAGE 1 */
 
 .page-one {
   min-height: 100vh;
-  background-image: url("friend-page1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url("friend-page1.jpg") center/cover no-repeat;
 }
 
 .hero {
@@ -68,36 +56,34 @@ body {
   font-size: 13px;
   letter-spacing: 4px;
   margin-bottom: 20px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.85);
 }
 
 .hero h1 {
   color: white;
-  font-size: clamp(55px, 13vw, 110px);
+  font-size: clamp(55px,13vw,110px);
   line-height: 0.9;
   letter-spacing: 5px;
-  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 3px 18px rgba(0,0,0,0.9);
 }
 
 .subtitle {
   color: white;
   margin: 25px 0;
   font-family: "Trebuchet MS", Arial, sans-serif;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.9);
 }
 
 .page-one .next-btn {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255,255,255,0.92);
   color: #111;
 }
 
-/* =========================
-   PAGE 2 - FRIEND
-========================= */
+/* PAGE 2 - FRIEND */
 
 .friend-page {
   min-height: 100vh;
-  background: #171717 url("bike-background.jpg") center/cover fixed;
+  background: url("bike-background.jpg") center/cover fixed;
 }
 
 .friend-screen {
@@ -107,20 +93,19 @@ body {
   overflow: hidden;
 }
 
-/*
-   Bike background is kept subtle.
-   It does NOT put a filter over the friend photo.
-*/
+/* Bike background only - very subtle */
 
 .friend-screen::before {
   content: "";
   position: absolute;
   inset: 0;
   background: url("bike-background.jpg") center/cover no-repeat;
-  opacity: 0.12;
+  opacity: 0.10;
   z-index: 1;
   pointer-events: none;
 }
+
+/* Friend photo stays completely natural */
 
 .friend-bg {
   position: absolute;
@@ -128,11 +113,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  /* FRIEND PHOTO STAYS NATURAL */
   filter: none;
   opacity: 1;
-
   z-index: 0;
 }
 
@@ -141,67 +123,52 @@ body {
   z-index: 3;
   min-height: 100vh;
   padding: 55px 7% 45px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   text-align: center;
 }
 
-/* PAGE 2 TITLE - BLACK */
+/* BLACK TITLE */
 
 .friend-overlay h1 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(42px, 9vw, 75px);
+  font-size: clamp(42px,9vw,75px);
   font-weight: normal;
   font-style: italic;
   letter-spacing: 2px;
-
   color: #000000;
-
-  text-shadow:
-    0 2px 6px rgba(255, 255, 255, 0.75);
-
+  text-shadow: 0 2px 6px rgba(255,255,255,0.8);
   margin-bottom: 30px;
 }
 
-/* PAGE 2 WRITING - BLACK */
+/* BLACK WRITING */
 
 .friend-writing {
-  width: min(800px, 90vw);
+  width: min(800px,90vw);
   max-height: 45vh;
   overflow-y: auto;
-
   padding: 10px;
-
   font-family: "Trebuchet MS", Arial, sans-serif;
   font-size: 17px;
   line-height: 1.8;
   text-align: center;
-
   color: #000000;
-
-  text-shadow:
-    0 1px 4px rgba(255, 255, 255, 0.7);
+  text-shadow: 0 1px 5px rgba(255,255,255,0.8);
 }
 
 .friend-writing p {
   margin-bottom: 20px;
 }
 
-/* PAGE 2 BUTTON */
-
 .friend-page .next-btn {
   color: #000000;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255,255,255,0.75);
   border-color: #000000;
 }
 
-/* =========================
-   PAGE 3 - AMMA
-========================= */
+/* PAGE 3 - AMMA */
 
 .amma-page {
   min-height: 100vh;
@@ -218,80 +185,52 @@ body {
 .amma-bg {
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   filter: none;
   opacity: 1;
-
   z-index: 0;
 }
 
-/*
-   Writing stays DIRECTLY OVER the Amma photo.
-   No separate white/black box.
-*/
+/* Writing directly over Amma photo */
 
 .amma-overlay {
   position: relative;
   z-index: 2;
-
   min-height: 100vh;
-
   padding: 55px 7% 45px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   text-align: center;
-
   color: white;
-
   background: transparent;
 }
 
-/* AMMA TITLE */
-
 .amma-overlay h1 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(45px, 10vw, 80px);
-
+  font-size: clamp(45px,10vw,80px);
   font-weight: normal;
   font-style: italic;
   letter-spacing: 3px;
-
   color: white;
-
-  text-shadow:
-    0 3px 16px rgba(0, 0, 0, 0.95);
-
+  text-shadow: 0 3px 16px rgba(0,0,0,0.95);
   margin-bottom: 30px;
 }
 
-/* AMMA WRITING OVER PHOTO */
-
 .amma-writing {
-  width: min(800px, 90vw);
+  width: min(800px,90vw);
   max-height: 48vh;
   overflow-y: auto;
-
   padding: 10px;
-
   font-family: "Trebuchet MS", Arial, sans-serif;
   font-size: 17px;
   line-height: 1.8;
   text-align: center;
-
   color: white;
-
-  text-shadow:
-    0 2px 9px rgba(0, 0, 0, 0.95);
-
+  text-shadow: 0 2px 9px rgba(0,0,0,0.95);
   background: transparent;
 }
 
@@ -299,115 +238,75 @@ body {
   margin-bottom: 20px;
 }
 
-/* AMMA BUTTON */
-
 .amma-page .next-btn {
   color: white;
-  background: rgba(40, 30, 20, 0.55);
-  border-color: #ffffff;
+  background: rgba(40,30,20,0.55);
+  border-color: white;
 }
 
-/* =========================
-   PAGE 4 - FINAL
-   BIKE BACKGROUND
-========================= */
+/* PAGE 4 - FINAL + BIKE */
 
 .final-page {
   min-height: 100vh;
-
   color: white;
-
   background:
     linear-gradient(
-      rgba(15, 10, 8, 0.42),
-      rgba(15, 10, 8, 0.52)
+      rgba(15,10,8,0.42),
+      rgba(15,10,8,0.52)
     ),
     url("bike-background.jpg") center/cover fixed;
 }
 
 .content-page {
   min-height: 100vh;
-
   padding: 60px 7% 50px;
-
   text-align: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* FINAL TITLE */
-
 .final-page h1 {
   font-family: Georgia, "Times New Roman", serif;
-
-  font-size: clamp(42px, 9vw, 75px);
-
+  font-size: clamp(42px,9vw,75px);
   margin-bottom: 35px;
-
   font-style: italic;
-
-  color: #ffffff;
-
-  text-shadow:
-    0 3px 16px rgba(0, 0, 0, 0.9);
+  color: white;
+  text-shadow: 0 3px 16px rgba(0,0,0,0.9);
 }
 
-/* FINAL MESSAGE */
-
 .final-message {
-  width: min(800px, 92vw);
-
+  width: min(800px,92vw);
   min-height: 400px;
-
   font-family: "Trebuchet MS", Arial, sans-serif;
-
   font-size: 19px;
-
   line-height: 2;
-
   text-align: center;
-
   color: white;
-
-  text-shadow:
-    0 2px 10px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.9);
 }
 
 .final-message p {
   margin-bottom: 20px;
 }
 
-/* LAST LINE */
-
 .final-message p:last-child {
   margin-top: 45px;
-
   font-family: Georgia, serif;
-
   font-size: 24px;
-
   font-weight: bold;
-
   color: white;
 }
 
-/* FINAL BUTTON */
-
 .final-page .next-btn {
-  background: rgba(40, 30, 20, 0.72);
-
+  background: rgba(40,30,20,0.72);
   color: white;
-
   border-color: white;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
 
   .friend-overlay,
   .amma-overlay {
@@ -417,9 +316,7 @@ body {
   .friend-writing,
   .amma-writing {
     max-height: 48vh;
-
     font-size: 16px;
-
     line-height: 1.7;
   }
 
